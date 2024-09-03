@@ -15,14 +15,19 @@
     <!-- 테일윈드 불러오기 -->
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <!--외부 css-->
     <link rel="stylesheet" href="../style/style.css">
+
+    <!--외부 js-->
+    <script src="../js/isValid.js"></script>
+
 </head>
 <body>
 <div class="logoBox mx-auto">
     <a href="#"></a>
 </div>
 <div class="loginBox mx-auto">
-    <form name="frmLogin" method="post" action="login/confirm">
+    <form name="frmLogin" method="post" action="/login/confirm" enctype="UTF-8">
         <div class="loginBox__input-box">
             <div class="idInputBox">
                 <label for="user_id">아이디 또는 전화번호</label>
@@ -33,7 +38,7 @@
                 <input type="password" id="user_pw" name="user_pw">
             </div>
             <div class="submitBox">
-                <input type="submit" value="로그인">
+                <input type="button" onClick="isValid()" value="로그인">
             </div>
         </div>
     </form>
