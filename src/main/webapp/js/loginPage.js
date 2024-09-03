@@ -4,9 +4,13 @@ function isValid(){
     const user_pw = frmLogin.user_pw.value;
     const tryAgainIdScript = document.querySelector('.tryAgainIdScript');
     const tryAgainPwScript = document.querySelector('.tryAgainPwScript');
+
+    //함수 시작할 시 초기화
+    tryAgainIdScript.classList.remove('active');
+    tryAgainPwScript.classList.remove('active');
+
     //아이디 유효성 검사
     if(user_id.length > 0){
-        tryAgainIdScript.classList.remove('active');
         //비밀번호 유효성 검사
         if(user_pw.length>0){
             frmLogin.method = "post";

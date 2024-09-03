@@ -20,8 +20,6 @@ public class DispatcherServlet extends HttpServlet {
     String url = req.getRequestURI();
     System.out.println(url);
 
-
-
     switch (url) {
       case "/login" :
         Container.memberController.showTryLogin(rq);
@@ -41,8 +39,9 @@ public class DispatcherServlet extends HttpServlet {
     System.out.println(url);
 
     switch (url) {
-      case "login/confirm" :
+      case "/login/confirm" :
         Container.memberController.userConfirm(rq);
+        break;
     }
   }
 }
