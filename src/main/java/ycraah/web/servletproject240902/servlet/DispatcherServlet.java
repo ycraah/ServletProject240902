@@ -16,10 +16,11 @@ import static ycraah.web.servletproject240902.container.Container.memberControll
 public class DispatcherServlet extends HttpServlet {
   @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    Rq rq = new Rq(req,resp);
     String url = req.getRequestURI();
     System.out.println(url);
 
-    Rq rq = new Rq(req,resp);
+
 
     switch (url) {
       case "/login" :
@@ -28,16 +29,20 @@ public class DispatcherServlet extends HttpServlet {
       case "/login/loginForm" :
         Container.memberController.showLoginForm(rq);
         break;
+      default:
+        Container.memberController.showTryLogin(rq);
     }
   }
 
   @Override
   protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    Rq rq = new Rq(req,resp);
     String url = req.getRequestURI();
     System.out.println(url);
 
     switch (url) {
-
+      case "login/confirm" :
+        Container.memberController.userConfirm(rq);
     }
   }
 }

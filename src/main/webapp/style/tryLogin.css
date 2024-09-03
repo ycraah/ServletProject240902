@@ -1,0 +1,49 @@
+.goToLoginPage__click-box {
+    margin-top: 20px;
+    width: 420px;
+    padding: 21px 20px 18px;
+    text-align: center;
+    border: 1px solid #e3e5e8;
+    border-radius: 8px;
+}
+
+.goToLoginPage__click-box .script {
+    font-size: 12px;
+}
+
+.goToLoginPage__click-box .goToLoginURL {
+    margin: 8px 0;
+    font-size: 14px;
+    display: block;
+    background-color: #03c75a;
+    box-shadow: 0 2px 4px 0 rgba(3, 199, 90, 0.24);
+    padding: 17px 0;
+    color: #eee;
+}
+
+.goToLoginPage__click-box .goToLoginURL .naver {
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.goToLoginPage__click-box .goToLoginURL:hover {
+    background-color: #17b75e;
+}
+
+.goToLoginPage__click-box .goToMemberURL {
+    color: #606060;
+    font-size: 12px;
+}
+
+.goToLoginPage__click-box .goToMemberURL li:nth-child(2)::before,
+.goToLoginPage__click-box .goToMemberURL li:nth-child(2)::after {
+    content: "";
+    display: inline-block;
+    border-left: 1px solid #606060;
+    height: 10px;
+    margin: 0 8px;
+}
+
+.goToLoginPage__click-box .goToMemberURL li:hover {
+    text-decoration: underline;
+}

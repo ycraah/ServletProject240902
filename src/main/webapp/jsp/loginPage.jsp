@@ -16,10 +16,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!--외부 css-->
-    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/loginForm.css">
 
     <!--외부 js-->
-    <script src="../js/isValid.js"></script>
+    <script src="../js/loginPage.js"></script>
 
 </head>
 <body>
@@ -36,6 +36,12 @@
             <div class="pwInputBox">
                 <label for="user_pw">비밀번호</label>
                 <input type="password" id="user_pw" name="user_pw">
+            </div>
+            <div class="tryAgainIdScript">
+                <p><span>아이디 또는 전화번호</span>를 입력해주세요.</p>
+            </div>
+            <div class="tryAgainPwScript">
+                <p><span>비밀번호</span>를 입력해주세요.</p>
             </div>
             <div class="submitBox">
                 <input type="button" onClick="isValid()" value="로그인">

@@ -18,16 +18,16 @@
     <!-- 테일윈드 불러오기 -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/tryLogin.css">
 </head>
 <body>
 <div class="goToLoginPage__click-box mx-auto">
     <p class="script">네이버를 더 안전하고 편리하게 이용하세요</p>
     <a class="goToLoginURL" href="http://localhost:8080/login/loginForm"><span class="naver">NAVER</span> 로그인</a>
     <ul class="goToMemberURL flex justify-center">
-        <li><a href="findUserId.jsp">아이디 찾기</a></li>
-        <li><a href="findUserPw.jsp">비밀번호 찾기</a></li>
-        <li><a href="registerForm.jsp">회원가입</a></li>
+        <li><a href="#">아이디 찾기</a></li>
+        <li><a href="#">비밀번호 찾기</a></li>
+        <li><a href="#">회원가입</a></li>
     </ul>
 </div>
 </body>

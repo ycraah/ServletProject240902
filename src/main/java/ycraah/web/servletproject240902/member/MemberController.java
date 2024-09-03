@@ -14,4 +14,8 @@ public class MemberController {
   public void showTryLogin(Rq rq) throws ServletException, IOException {
     rq.view("tryLogin", rq);
   }
+
+  public void userConfirm(Rq rq) {
+
+  }
 }
