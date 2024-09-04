@@ -77,11 +77,27 @@
     color: #ff0101;
 }
 
+.loginBox .loginBox__input-box .tryAgainIdOrPwScript {
+    display: none;
+    margin: 10px 0;
+    text-align: left;
+    font-size: 11px;
+    color: #ff0101;
+}
+
 .loginBox .loginBox__input-box .tryAgainPwScript span {
     font-weight: 700;
 }
 
 .loginBox .loginBox__input-box .tryAgainPwScript.active {
+    display: block;
+}
+
+.loginBox .loginBox__input-box .tryAgainIdOrPwScript {
+    display: none;
+}
+
+.loginBox .loginBox__input-box .tryAgainIdOrPwScript.active {
     display: block;
 }
 
@@ -120,3 +136,5 @@
 .goToMemberURL li:hover {
     text-decoration: underline;
 }
+
+

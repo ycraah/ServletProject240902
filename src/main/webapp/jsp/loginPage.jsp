@@ -7,6 +7,10 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="commonSetting.jsp" %>
+<%
+    String cmd = request.getParameter("cmd");
+    request.setAttribute("cmd", cmd);
+%>
 <html>
 <head>
     <title>로그인 페이지</title>
@@ -39,6 +43,11 @@
             </div>
             <div class="tryAgainPwScript">
                 <p><span>비밀번호</span>를 입력해주세요.</p>
+            </div>
+            <div class="tryAgainIdOrPwScript active">
+                <c:if test="${cmd eq 'notConfirmed'}">
+                    <p>아이디(로그인 전화번호, 로그인 전용 아이디) 또는 비밀번호가 잘못 되었습니다. 아이디와 비밀번호를 정확히 입력해 주세요.</p>
+                </c:if>
             </div>
             <div class="submitBox">
                 <input type="button" onClick="isValid()" value="로그인">

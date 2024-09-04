@@ -47,10 +47,11 @@ public class MemberController {
       req.setAttribute("name", confirmedMember.getName());
       req.setAttribute("email", confirmedMember.getEmail());
       req.setAttribute("joinDate", confirmedMember.getJoinDate());
-      RequestDispatcher dispatch = req.getRequestDispatcher("/jsp/confirmed.jsp");
+      RequestDispatcher dispatch = req.getRequestDispatcher("/jsp/logined.jsp");
       dispatch.forward(req,resp);
     } else {
-      resp.sendRedirect("/jsp/notconfirmed.jsp");
+      RequestDispatcher dispatch = req.getRequestDispatcher("/jsp/loginPage.jsp?cmd=notConfirmed");
+      dispatch.forward(req,resp);
     }
 
   }

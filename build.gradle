@@ -36,6 +36,9 @@ dependencies {
     // https://mvnrepository.com/artifact/com.mysql/mysql-connector-j
     implementation 'com.mysql:mysql-connector-j:9.0.0'
 
+    // https://mvnrepository.com/artifact/javax.servlet/jstl
+    implementation 'javax.servlet:jstl:1.2'
+
 }
 
 test {
