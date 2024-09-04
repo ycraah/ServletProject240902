@@ -24,7 +24,7 @@ public class MemberController {
     HttpServletResponse resp = rq.getResp();
     String user_id = req.getParameter("user_id");
     String user_pw = req.getParameter("user_pw");
-    req.setCharacterEncoding("UTF-8");
+//    req.setCharacterEncoding("UTF-8"); 필터로 처리
     resp.setContentType("text/html;charset=UTF-8");
 
     PrintWriter out = resp.getWriter();
@@ -32,6 +32,7 @@ public class MemberController {
     out.printf("<p>입력된 아이디 : %s</p>", user_id);
     out.printf("<p>입력된 비밀번호 : %s</p>", user_pw);
     out.println("</body></html>");
+
 
   }
 }
