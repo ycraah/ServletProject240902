@@ -10,7 +10,7 @@ import java.util.List;
 public class MemberDAO {
   // JDBC 연결 객체
   private Connection connection = null;
-  private Statement statement = null;
+  private PreparedStatement pstmt = null;
   private ResultSet rs = null;
 
   // MySQL 연결 정보
@@ -24,8 +24,8 @@ public class MemberDAO {
       connDB();
       String query = "select * from t_member";
       System.out.println(query);
-      statement = connection.createStatement();
-      rs = statement.executeQuery(query);
+      pstmt = connection.prepareStatement(query);
+      rs = pstmt.executeQuery();
 
       while (rs.next()) {
         String id = rs.getString("id");
