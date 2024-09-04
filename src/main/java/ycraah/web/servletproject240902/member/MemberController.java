@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
+import java.util.List;
 
 public class MemberController {
 
@@ -34,5 +35,13 @@ public class MemberController {
     out.println("</body></html>");
 
 
+  }
+
+  public void showAllMemberDB() {
+    MemberDAO dao = new MemberDAO();
+    List<MemberVO> members = dao.showMembers();
+    for(MemberVO member : members){
+      System.out.println(member);
+    }
   }
 }
