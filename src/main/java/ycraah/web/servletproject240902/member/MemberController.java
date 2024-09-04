@@ -2,6 +2,7 @@ package ycraah.web.servletproject240902.member;
 
 import ycraah.web.servletproject240902.Rq;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -20,20 +21,37 @@ public class MemberController {
     rq.view("tryLogin", rq);
   }
 
-  public void userConfirm(Rq rq) throws IOException {
+  public void userConfirm(Rq rq) throws IOException, ServletException {
     HttpServletRequest req = rq.getReq();
     HttpServletResponse resp = rq.getResp();
-    String user_id = req.getParameter("user_id");
-    String user_pw = req.getParameter("user_pw");
-//    req.setCharacterEncoding("UTF-8"); 필터로 처리
-    resp.setContentType("text/html;charset=UTF-8");
+    String id = req.getParameter("user_id");
+    String pw = req.getParameter("user_pw");
+    System.out.println("아이디: " + id + " 비밀번호 : " + pw);
 
-    PrintWriter out = resp.getWriter();
-    out.println("<html><body>");
-    out.printf("<p>입력된 아이디 : %s</p>", user_id);
-    out.printf("<p>입력된 비밀번호 : %s</p>", user_pw);
-    out.println("</body></html>");
+    //DB에서 정보 얻어오기
+    MemberDAO dao = new MemberDAO();
+    MemberVO confirmedMember = null;
+    List<MemberVO> members = dao.showMembers();
+    for (MemberVO member : members) {
+      if (id.equals(member.getId())) {
+        if(pw.equals(member.getPw())) {
+          confirmedMember = member;
+        }
+      }
+    }
 
+    //회원 확인
+    if(confirmedMember != null) {
+      req.setAttribute("user_id", confirmedMember.getId());
+      req.setAttribute("user_pw", confirmedMember.getPw());
+      req.setAttribute("name", confirmedMember.getName());
+      req.setAttribute("email", confirmedMember.getEmail());
+      req.setAttribute("joinDate", confirmedMember.getJoinDate());
+      RequestDispatcher dispatch = req.getRequestDispatcher("/jsp/confirmed.jsp");
+      dispatch.forward(req,resp);
+    } else {
+      resp.sendRedirect("/jsp/notconfirmed.jsp");
+    }
 
   }
 

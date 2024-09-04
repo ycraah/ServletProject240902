@@ -6,10 +6,11 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@include file="commonSetting.jsp" %>
 <html>
 <head>
     <title>로그인 페이지</title>
-    <%@include file="commonSetting.jsp" %>
+
 
     <!--외부 css-->
     <link rel="stylesheet" href="../style/loginForm.css">

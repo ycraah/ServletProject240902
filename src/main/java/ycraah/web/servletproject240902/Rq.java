@@ -2,6 +2,7 @@ package ycraah.web.servletproject240902;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.Setter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,6 +13,7 @@ import java.io.PrintWriter;
 
 @AllArgsConstructor
 @Getter
+@Setter
 public class Rq {
   public HttpServletRequest req;
   public HttpServletResponse resp;
