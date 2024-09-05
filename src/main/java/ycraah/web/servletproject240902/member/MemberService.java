@@ -43,7 +43,5 @@ public enum MemberService {
     } else {
       rq.dispatch("/jsp/loginPage.jsp?cmd=notConfirmed");
     }
-
   }
-
 }
