@@ -21,18 +21,15 @@ public class Rq {
   public Rq(HttpServletRequest req, HttpServletResponse resp) {
     this.req = req;
     this.resp = resp;
-
-    try {
-      req.setCharacterEncoding("UTF-8");
-    } catch (UnsupportedEncodingException e) {
-      throw new RuntimeException(e);
-    }
-    resp.setCharacterEncoding("UTF-8");
-    resp.setContentType("text/html; charset utf-8");
   }
 
   public void view(String urlPath) throws ServletException, IOException {
     RequestDispatcher dispatch = req.getRequestDispatcher("/jsp/" + urlPath + ".jsp");
+    dispatch.forward(req, resp);
+  }
+
+  public void dispatch(String path) throws ServletException, IOException {
+    RequestDispatcher dispatch = req.getRequestDispatcher(path);
     dispatch.forward(req, resp);
   }
 }
