@@ -27,8 +27,6 @@ public class DispatcherServlet extends HttpServlet {
       case "/login/loginForm" :
         Container.memberController.showLoginForm(rq);
         break;
-      case "/login/memberList" :
-        Container.memberController.showAllMemberDB();
       default:
         Container.memberController.showTryLogin(rq);
     }

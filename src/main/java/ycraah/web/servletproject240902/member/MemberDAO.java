@@ -23,7 +23,7 @@ public class MemberDAO {
     try{
       connDB();
       String query = "select * from t_member";
-      System.out.println(query);
+      System.out.println("query : " + query);
       pstmt = connection.prepareStatement(query);
       rs = pstmt.executeQuery();
 
